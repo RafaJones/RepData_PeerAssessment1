@@ -4,6 +4,7 @@ author: "Carlos Mercado"
 date: "April 17, 2017"
 output: 
   html_document: 
+    fig_caption: yes
     keep_md: yes
 ---
 
