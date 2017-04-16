@@ -44,7 +44,7 @@ activ <- group_by(activ,date)
 
 sumsteps <- summarise_each(activ, funs(sum), steps) 
 with(sumsteps, 
-     plot(1:length(date), steps, type = "h", xlab = "Day #", ylab = "Total Steps", 
+     hist(steps, xlab = "Steps", ylab = "Frequency", 
           main = "Total Steps per Day"))
 
 ```
@@ -52,7 +52,7 @@ with(sumsteps,
 3. Including a quick summary for the mean and median steps (NAs removed automatically) 
 
 ```{r}
-with(sumsteps, summary(steps))
+with(na.omit(sumsteps), summary(steps))
 ```
 
 4. The average steps taken in each interval, across all 61 days. 
@@ -107,7 +107,7 @@ on matching each table's interval column, I just don't know how to code that eff
 
 sumfullsteps <- summarise_each(fulldata, funs(sum), steps) 
 with(sumfullsteps, 
-     plot(1:length(date), steps, type = "h", xlab = "Day #", ylab = "Total Steps", 
+     hist(steps, xlab = "Steps", ylab = "Frequency", 
           main = "Total Steps per Day (Imputed Data)"))
 
 ```
